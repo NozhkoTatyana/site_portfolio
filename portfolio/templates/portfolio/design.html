@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Orient</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Подключение ссылок -->
+  <!-- НОРМАЛИЗАЦИЯ СТИЛЕЙ -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <link href="{% static "portfolio/css/style.css" %}" rel="stylesheet" media="screen">
+
+  <!-- ПОДКЛЮЧЕНИЕ ШРИФТОВ -->
+  <link rel="chortcut icon" type="img/x-icon" href="{% static "portfolio/img/favicon/favicon.png" %}">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption:400,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+  <div class="portfolio_single_page">
+    <div class="conteiner">
+      <div class="portfolio-content">
+        <h1 class = "portfolio-content--title"> Orient </h1>
+        <div class="image"style=" width: 70%; margin: 0 auto; ">
+          <img src="{{design.imgdesign.url}}" alt="imgdesign">
+        </div>
+
+        <div class="image-description">{{design.design_title}}
+        </div>
+
+        <div class = "block__butto-back">
+          <a href="{% url 'portfolio' %}#portfolio" class="button_back">&larr; Вернуться на главную </a>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  </html>

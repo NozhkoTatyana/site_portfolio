@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="ALL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Студия №50 - создание и наполнение сайта под ключ с нуля, эффективное продвижение
+          бизнес страницы в Instagram и Facebook, разработка авторского дизайна сайта, верстка и
+          подготовка макета визитки книги флаера к печати.">
+    <meta name="keywords"
+          content="разработка и наполнение сайта недорого, раскрутка в сети с гарантией, быстрое продвижение
+          страницы в соцсетях, ведение бизнес аккаунта в Instagram и Facebook, заказать дизайн сайта, сверстать
+          макет визитки, копирайтинг по низким ценам, бизнес онлайн, просчет стоимости сайта, разработать чат-бота,
+          накрутка подписчиков Инстаграм, заказать лендинг в Одессе, создать интернет-магазин в Украине.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:wght@300;400&display=swap"
+          rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static "studian_50/css/project.css" %}">
+    <link type="text/css" rel="stylesheet" href="{% static "studian_50/css/style.css" %}">
+    <link type="text/css" rel="stylesheet" href="{% static "studian_50/css/button.css" %}">
+    <link rel="shortcut icon" href="{% static "studian_50/img/favicon.png" %}" type="image/png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+
+    <title>Заказать сайт и продвижение в соцсетях | Украина | Студия №50</title>
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+    <div id="cssload-loader">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<div class="project-information">
+    <div class="title"> <h2>{{project.project_title}}</h2> </div>
+{% if project.imgproject  %}
+    <div class="project-image">
+        <img src="{{project.imgproject.url}}">
+    </div>
+    <div class="project-description">
+        {{project.description}}
+    </div>
+
+        <div class="link">
+        <a href = "{{project.link}}" class="link">{{project.link}}</a>
+    </div>
+    <div class="author">Author:{{project.author}}</div>
+    <div class="button-back">
+        <a href="{% url 'studian_50' %}#portfolio" class="back">&#8592; Back to home</a>
+    </div>
+    {% else %}
+    <div class="project-image">
+      <img src="">
+    </div>
+    <div class="project-description">
+      {{project.description}}
+    </div>
+
+       <div class="link">
+        <a href = "{{project.link}}" class="link">{{project.link}}</a>
+    </div>
+    <div class="author">Author:{{project.author}}</div>
+    <div class="button-back">
+      <a href="{% url 'pagination' %}" class="back">&#8592; Вернуться назад</a>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172027494-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-172027494-1');
+</script>
+
+<script src="{% static "studian_50/js/main.js" %}"></script>
+
+</body>
+</html>
